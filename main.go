@@ -7,14 +7,23 @@ func main() {
 	fmt.Println("1. Add")
 	fmt.Println("2. Subtract")
 	fmt.Println("3. Multiply")
-	fmt.Println("4. Divide \n\n")
+	fmt.Println("4. Divide")
 	fmt.Print("Select a function:")
 
 	var selection int
 	fmt.Scan(&selection)
 
 	x, y := getNumbers()
-	fmt.Println(x, " + ", y, " = ", add(x, y))
+
+	if selection == 1 {
+		fmt.Printf("%d + %d = %d\n", x, y, add(x, y))
+	} else if selection == 2 {
+		fmt.Printf("%d - %d = %d\n", x, y, subtract(x, y))
+	} else if selection == 3 {
+		fmt.Println("%d * %d = %d\n", x, y, multiply(x, y))
+	} else if selection == 4 {
+		fmt.Println("%d / %d = %d\n", x, y, divide(x, y))
+	}
 }
 
 func getNumbers() (int, int) {
@@ -31,4 +40,16 @@ func getNumbers() (int, int) {
 
 func add(x int, y int) int {
 	return x + y
+}
+
+func subtract(x int, y int) int {
+	return x - y
+}
+
+func multiply(x int, y int) int {
+	return x * y
+}
+
+func divide(x int, y int) int {
+	return x / y
 }
