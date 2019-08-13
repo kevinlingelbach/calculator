@@ -26,6 +26,10 @@ func main() {
 	}
 }
 
+func intro() {
+
+}
+
 func getNumbers() (int, int) {
 	fmt.Print("Enter number 1: ")
 	var num1 int
